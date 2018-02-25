@@ -1,0 +1,2 @@
+Usage:
+docker run --privileged --rm -it sixcorners/sandsifter
