@@ -11,5 +11,7 @@ RUN git clone --depth=1 https://github.com/xoreaxeaxeax/sandsifter \
  && mv */* . \
  && rmdir --ignore-fail-on-non-empty sandsifter \
  && make
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
 ENV TERM=xterm-256color
 CMD exec python sifter.py --unk --dis --len --sync --tick -- -P1 -t
